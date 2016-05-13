@@ -1,4 +1,9 @@
-/*! phunkslider for jQuery - http://www.phunkei.de */
+/*! phunkslider for jQuery
+ *
+ * http://www.phunkei.de
+ * https://github.com/phunkei/jquery.phunkslider
+ * License: MIT License (MIT)
+ */
 (function( $ ){
 	$.fn.phunkslider = function(options) {
 
@@ -10,11 +15,12 @@
 				$.fn.phunkslider.options.interval = options.interval;
 			}
 		}
-		var slides = $(this).find('li');
-		var totalHeight = $(this).outerHeight();
-		var top = true;
+		
+		var $slides = $(this).find('li');
+		$slides.removeClass('active');
+		$slides.first().addClass('active');
 
-		$.fn.phunkslider.options.slides = slides;
+		$.fn.phunkslider.options.slides = $slides;
 
 		setTimeout( function() {
 			$.fn.phunkslider.start()
